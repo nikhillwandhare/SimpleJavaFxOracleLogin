@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 public class Main extends Application {
 
 	public Stage globalStage;
+	
+	public Stage globalStage1;
 
 	public Stage getGlobalStage() {
 		return globalStage;

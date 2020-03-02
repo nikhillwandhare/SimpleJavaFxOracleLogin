@@ -1,4 +1,4 @@
-package com;
+package com.controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ public class Main extends Application {
 
 	public Stage globalStage;
 	
-	public Stage globalStage1;
+	
 
 	public Stage getGlobalStage() {
 		return globalStage;
@@ -23,7 +23,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginPage1.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fxml/LoginPage1.fxml"));
             Parent root = loader.load();
             setGlobalStage(primaryStage);
 			Scene scene = new Scene(root, 700, 400);

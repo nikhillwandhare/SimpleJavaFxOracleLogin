@@ -8,11 +8,10 @@ import java.sql.ResultSetMetaData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.UserInformationService;
+import com.service.UserInformationService;
 
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.OracleTypes;
-import oracle.jdbc.oracore.OracleType;
 
 public class OracleProcess {
 

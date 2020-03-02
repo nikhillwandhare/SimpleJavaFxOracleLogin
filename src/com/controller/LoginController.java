@@ -1,4 +1,4 @@
-package com;
+package com.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import org.json.JSONArray;
+
+import com.service.UserInformationService;
 
 import OracleDatabase.OracleConnection;
 import OracleDatabase.OracleProcess;
@@ -77,6 +79,8 @@ public class LoginController implements Initializable {
 			System.out.println("HashMap>>"+arr);*/
 			UserInformationService info= ora.checkUserLogin(userName.getText(),password.getText());
 			setLoggedUser(info);
+			DashboardController dash=new DashboardController();
+			dash.setLoggedUser(info);
 			
 			if (info.getADUM_USER_ID() > 0) {
 				
@@ -85,12 +89,14 @@ public class LoginController implements Initializable {
 				
 				Stage stage = (Stage)loginBtn.getScene().getWindow();
 				stage.hide();
-				loadStage("/com/Dashboard.fxml");
-
+				loadStage("/com/fxml/Dashboard_2.fxml");
+				
 			} else {
 				msgtext.setText("Invalid User Name or Password....");
 			}
-			}catch(Exception s) {s.printStackTrace();};
+			} catch (Exception s) {
+				msgtext.setText("Invalid User Name or Password....");
+				/* s.printStackTrace(); */};
 		});
 	}
 	
